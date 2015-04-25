@@ -16,12 +16,24 @@
 
     .coffee-cup {
       display: block;
-      -webkit-clip-path: polygon(59px 297px,194px 295px,229px 78px,28px 81px);
       position: absolute;
     }
 
-    .color-wipe {
-      background-color: yellow;
+    .coffee-fill {
+      display: block;
+      position: absolute;
+      width: 260px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      -webkit-clip-path: polygon(62px 291px,191px 291px,225px 82px,32px 82px);
+      -moz-clip-path: polygon(62px 291px,191px 291px,225px 82px,32px 82px);
+    }
+
+    .coffee-fill__wipe {
+      background-color: rgba(243, 159, 255, 0.55);
       display: block;
       position: absolute;
       top: 100%;
@@ -29,37 +41,41 @@
       left: 0;
       right: 0;
       transition: top .3s cubic-bezier(0.4,-0.59, 0.29, 0.92);
-      -webkit-clip-path: polygon(59px 297px,194px 295px,229px 78px,28px 81px);
     }
 
     .background {
       background-color: #e4509b;
     }
 
+    .cup {
+      cursor: pointer;
+    }
+
     svg {
       stroke: #49EEEC;
       stroke-width: 8px;
       fill: transparent;
-      cursor: pointer;
       display: block;
       margin: 0 auto;
     }
+
   </style>
 </head>
 <body>
-  <div>
-    <svg height="310" width="260">
+  <div style="position: relative" class="cup">
+    <svg height="310" width="260" >
       <defs>
         <clipPath id="coffee-clip">
           <polygon points="59 297 194 295 229 78 28 78" />
         </clipPath>
       </defs>
-
-      <rect x="10" y="78" width="300" height="100" clip-path="url(#coffee-clip)" fill="rgba(243, 159, 255, 55)" stroke="none"/>
       <polygon points="30 55 228 55 220 35 38 35" />
       <rect x="22" y="55" width="214" height="20" stroke-width="4" />
       <polygon points="59 295 194 295 229 78 28 78" />
     </svg>
+    <div class="coffee-fill">
+      <div class="coffee-fill__wipe js-coffee-fill"></div>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -67,9 +83,8 @@
     $(function() {
       var height = 100;
 
-      $('.btn').click(function() {
-        height -= 20;
-        $('.color-wipe').css('top', height + '%');
+      $('.cup').click(function() {
+        $( '.js-coffee-fill' ).css('top', '-=50');
       });
     });
   </script>
