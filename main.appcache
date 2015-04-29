@@ -10,6 +10,7 @@ CACHE MANIFEST
 # list ALL assets which should be downloaded for offline use
 # no pattern matching is supported
 index.html
+main.js
 http://fonts.googleapis.com/css
 
 # FALLBACK:
