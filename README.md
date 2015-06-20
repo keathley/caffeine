@@ -4,7 +4,12 @@ coffee is srsbsns
 
 ## About
 
-I think coffee is important. So important in fact that I decided I needed to track how much I was drinking each day.  This is a SPA for doing just that.  All of the svg and clip paths are written by hand.  The only external dependency is firebase for persistence across devices. 
+I think coffee is important. So important in fact that I decided I needed to track how much I was drinking each day.  This is a SPA for doing just that.  All of the svg and clip paths are written by hand.  The main external dependency is firebase for persistence across devices. 
+
+## TODO
+
+- [ ] allow multiple users
+- [ ] remove jquery dependency
 
 ## Feedback
 
